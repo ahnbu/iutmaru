@@ -44,7 +44,8 @@ section h2 { font-size: .95rem; color: var(--sub); letter-spacing: .1em; margin-
 .vb-form { display: grid; gap: 10px; margin-bottom: 28px; }
 .vb-form input, .vb-form textarea, .vb-form select {
   font: inherit; padding: 14px 16px; border: 1px solid rgba(140,128,121,.35);
-  border-radius: 12px; background: #fff; color: var(--text); }
+  border-radius: 12px; background: #fff; color: var(--text);
+  min-width: 0; max-width: 100%; }
 .vb-form button { font: inherit; font-weight: 700; padding: 16px; border: none;
   border-radius: 12px; background: var(--primary); color: #fff; cursor: pointer; }
 .vb-form button:disabled { opacity: .55; cursor: default; }
@@ -83,10 +84,11 @@ section h2 { font-size: .95rem; color: var(--sub); letter-spacing: .1em; margin-
              border-radius: 16px; margin-bottom: 24px; }
 .admin-box h3 { font-size: 1rem; margin-bottom: 12px; }
 .admin-add { display: flex; gap: 8px; margin-bottom: 12px; }
-.admin-add input { flex: 1; font: inherit; padding: 10px 14px; border-radius: 10px;
+.admin-add input { flex: 1; min-width: 0; font: inherit; padding: 10px 14px; border-radius: 10px;
                    border: 1px solid rgba(140,128,121,.35); background: #fff; }
 .admin-add button { font: inherit; padding: 10px 18px; border: none; border-radius: 10px;
-                    background: var(--primary); color: #fff; cursor: pointer; }
+                    background: var(--primary); color: #fff; cursor: pointer;
+                    flex-shrink: 0; white-space: nowrap; }
 .admin-cats { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .admin-cats li { display: flex; align-items: center; gap: 8px; background: #fff;
                  padding: 6px 8px 6px 14px; border-radius: 999px; font-size: .95rem; }
