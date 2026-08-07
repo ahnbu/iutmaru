@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from './supabaseClient'
 
-function Intro() {
+function Intro({ signedIn }) {
   return (
     <>
       <header>
@@ -54,7 +54,9 @@ function Intro() {
 
       <div className="cta">
         <a href="#voicebox">제보하기</a>
-        <p className="note">남기시려면 로그인이 필요합니다</p>
+        <p className="note">
+          {signedIn ? '아래 칸에 남겨주세요' : '남기시려면 로그인이 필요합니다'}
+        </p>
       </div>
     </>
   )
@@ -344,7 +346,7 @@ export default function App() {
           </button>
         </div>
       )}
-      <Intro />
+      <Intro signedIn={!!user} />
       <VoiceBox session={session} />
       <footer>
         <dl>
