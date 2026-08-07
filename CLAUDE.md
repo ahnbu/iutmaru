@@ -33,3 +33,11 @@
 - .env — VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY
 - 버셀 Environment Variables에 같은 이름으로 등록 (Production)
 - .env는 .gitignore에 있어 깃허브에 안 올라간다
+
+## 고칠 때 자주 틀리는 것
+
+- 버셀은 「깃허브에 올려줘」만으로 항상 반영되지 않는다.
+  Deployments 맨 위 줄이 방금 올린 커밋인지 확인한다.
+  Redeploy는 「다시 빌드」가 아니라 「그 배포를 다시 올리기」다.
+- .env를 고치면 버셀 Environment Variables도 같이 고쳐야 한다. 두 곳이다.
+- api/ 폴더의 서버 파일은 localhost에서 안 돈다. 배포 주소에서 확인한다.
