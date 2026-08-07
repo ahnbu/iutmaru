@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이웃마루</title>
+<style>
+  :root {
+    --primary: #E8623A;
+    --sub: #8C8079;
+    --bg: #FFF7F2;
+    --text: #2A2320;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+         line-height: 1.75; color: var(--text); background: var(--bg); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 80px 0 44px; }
+  header h1 { font-size: 2.6rem; letter-spacing: -0.03em; }
+  header .bar { width: 48px; height: 5px; background: var(--primary);
+                border-radius: 999px; margin: 18px 0; }
+  header p { color: var(--sub); font-size: 1.05rem; }
+  section { padding: 36px 0; }
+  section h2 { font-size: .95rem; color: var(--sub); letter-spacing: .08em;
+               text-transform: uppercase; margin-bottom: 14px; }
+  .works { display: grid; gap: 12px; }
+  .work { padding: 20px 22px; background: #fff; border-radius: 16px;
+          box-shadow: 0 2px 10px rgba(42,35,32,.05); }
+  .work strong { display: block; margin-bottom: 6px; }
+  .cta { padding: 40px 0 56px; }
+  .cta a { display: block; text-align: center; padding: 18px;
+           background: var(--primary); color: #fff; text-decoration: none;
+           border-radius: 16px; font-weight: 700; font-size: 1.05rem; }
+  footer { padding: 0 0 72px; color: var(--sub); font-size: .88rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>이웃마루</h1>
+    <div class="bar"></div>
+    <p>동네의 불편을 모아 전하고, 주민 모임을 잇습니다</p>
+  </header>
+  <section>
+    <h2>인사말</h2>
+    <p>길이 파였는데 어디에 말해야 할지 몰라 그냥 지나친 적, 있으시죠.
+       이웃마루는 그런 이야기를 모아 구청과 주민센터에 전합니다.
+       혼자 말하면 넘어가지만, 모여서 말하면 달라집니다.</p>
+  </section>
+  <section>
+    <h2>하는 일</h2>
+    <div class="works">
+      <div class="work"><strong>생활 불편 모으기</strong>동네에서 겪은 불편을 주민에게서 직접 받습니다.</div>
+      <div class="work"><strong>기관에 전달하기</strong>모인 이야기를 정리해 구청·주민센터에 전달하고 결과를 알립니다.</div>
+      <div class="work"><strong>주민 모임 잇기</strong>같은 문제를 겪는 이웃끼리 만나는 자리를 만듭니다.</div>
+    </div>
+  </section>
+  <div class="cta"><a href="#">제보하기</a></div>
+  <footer><p>연락처 준비 중</p></footer>
+</div>
+</body>
+</html>
