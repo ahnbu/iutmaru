@@ -66,6 +66,41 @@ section h2 { font-size: .95rem; color: var(--sub); letter-spacing: .1em; margin-
 
 .error { color: #B0341A; padding: 12px 0; }
 
+.userbar { display: flex; justify-content: flex-end; align-items: center; gap: 12px;
+           padding: 14px 0; color: var(--sub); font-size: .95rem; }
+.userbar button { font: inherit; padding: 8px 16px; border-radius: 999px;
+                  border: 1px solid rgba(140,128,121,.4); background: #fff;
+                  color: var(--text); cursor: pointer; }
+
+.signin-box { padding: 28px 22px; background: #fff; border-radius: 16px; text-align: center;
+              box-shadow: 0 2px 10px rgba(42,35,32,.05); margin-bottom: 28px; }
+.signin-box button { font: inherit; font-weight: 700; padding: 14px 28px; margin: 14px 0 8px;
+                     border: none; border-radius: 12px; background: var(--primary);
+                     color: #fff; cursor: pointer; }
+.signin-box .note { color: var(--sub); font-size: .9rem; }
+
+.admin-box { padding: 20px 22px; background: #FFF1EA; border: 1px solid rgba(232,98,58,.3);
+             border-radius: 16px; margin-bottom: 24px; }
+.admin-box h3 { font-size: 1rem; margin-bottom: 12px; }
+.admin-add { display: flex; gap: 8px; margin-bottom: 12px; }
+.admin-add input { flex: 1; font: inherit; padding: 10px 14px; border-radius: 10px;
+                   border: 1px solid rgba(140,128,121,.35); background: #fff; }
+.admin-add button { font: inherit; padding: 10px 18px; border: none; border-radius: 10px;
+                    background: var(--primary); color: #fff; cursor: pointer; }
+.admin-cats { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-cats li { display: flex; align-items: center; gap: 8px; background: #fff;
+                 padding: 6px 8px 6px 14px; border-radius: 999px; font-size: .95rem; }
+.admin-cats button { font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 999px;
+                     border: 1px solid rgba(140,128,121,.35); background: transparent;
+                     color: var(--sub); cursor: pointer; }
+
+.status-sel { font: inherit; font-size: .9rem; padding: 4px 10px; border-radius: 999px;
+              border: 1px solid rgba(232,98,58,.45); background: #fff; color: var(--primary); }
+
+.vb-item .del { font: inherit; font-size: .85rem; padding: 4px 12px; margin-left: auto;
+                border: 1px solid rgba(176,52,26,.35); border-radius: 999px;
+                background: #fff; color: #B0341A; cursor: pointer; }
+
 footer { padding: 24px 0 80px; border-top: 1px solid rgba(140,128,121,.2);
          color: var(--sub); font-size: .92rem; }
 footer dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; }
