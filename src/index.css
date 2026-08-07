@@ -105,3 +105,6 @@ footer { padding: 24px 0 80px; border-top: 1px solid rgba(140,128,121,.2);
          color: var(--sub); font-size: .92rem; }
 footer dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; }
 footer dt { font-weight: 600; }
+
+.vb-form .refine { background: #fff; color: var(--primary);
+  border: 1px solid rgba(232,98,58,.5); }

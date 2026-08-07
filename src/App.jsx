@@ -116,6 +116,7 @@ function VoiceBox({ session }) {
   const [category, setCategory] = useState('')
   const [photo, setPhoto] = useState(null)
   const [saving, setSaving] = useState(false)
+  const [refining, setRefining] = useState(false)
   const [error, setError] = useState('')
 
   const user = session?.user ?? null
@@ -152,6 +153,36 @@ function VoiceBox({ session }) {
       provider: 'google',
       options: { redirectTo: window.location.origin },
     })
+  }
+
+  async function handleRefine() {
+    const seed = content.trim() || title.trim()
+    if (!seed) {
+      setError('먼저 하고 싶은 말을 한 줄이라도 적어주세요.')
+      return
+    }
+    setRefining(true)
+    setError('')
+    try {
+      const r = await fetch('/api/refine', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: seed, categories: categories.map((c) => c.name) }),
+      })
+      const data = await r.json()
+      if (!r.ok) {
+        setError(data.error || 'AI 다듬기에 실패했습니다.')
+      } else {
+        if (data.title) setTitle(data.title)
+        if (data.content) setContent(data.content)
+        if (data.category && categories.some((c) => c.name === data.category)) {
+          setCategory(data.category)
+        }
+      }
+    } catch (e) {
+      setError(e.message)
+    }
+    setRefining(false)
   }
 
   async function handleSubmit(e) {
@@ -230,6 +261,9 @@ function VoiceBox({ session }) {
             accept="image/*"
             onChange={(e) => setPhoto(e.target.files?.[0] ?? null)}
           />
+          <button type="button" className="refine" onClick={handleRefine} disabled={refining}>
+            {refining ? 'AI가 다듬는 중…' : '✨ AI로 다듬기'}
+          </button>
           <button type="submit" disabled={saving}>
             {saving ? '남기는 중…' : '남기기'}
           </button>
